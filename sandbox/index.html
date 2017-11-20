@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bravo Sandbox</title>
+    <script src="./webcomponents-sd-ce.js"></script>
+    <script src="../dist/bravo.js"></script>
+    <script>
+        class MyComponent extends bravo.Component{
+
+            static get tag (){
+                return 'my-component';
+            }
+
+            static get props (){
+                return {
+                    foo: {
+                        default: 'bar'
+                    },
+                    attr: {
+                        attribute: true
+                    }
+                };
+            }
+
+            constructor(){
+                super();
+                console.log('alo', this);
+            }
+
+        }
+        customElements.define(MyComponent.tag, MyComponent);
+    </script>
+</head>
+<body>
+
+<my-component>
+    <h1>Holas</h1>
+</my-component>
+
+</body>
+</html>
